@@ -1,5 +1,5 @@
 import java.util.Scanner;
- 
+
 public class SalarioEmpregado{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -20,7 +20,9 @@ public class SalarioEmpregado{
 
         System.out.print("\nInforme a % para aumento no salário: ");
         double porcentagem = scanner.nextDouble(); 
+        
         funcao.aumentoPorcentagemSalario(porcentagem);
+        
 
         System.out.println("\n**Salário com aumento: " + funcao + "\n");
     }
