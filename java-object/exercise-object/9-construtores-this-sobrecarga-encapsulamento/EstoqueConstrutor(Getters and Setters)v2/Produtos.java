@@ -1,7 +1,7 @@
 public class Produtos{ 
      String nome;
      private double preco;
-     private int quantidade;
+     private int quantidade; 
  
      // Construtor padrão criado para exemplo onde foi instanciado na "aba" Estoque.java Obj "p"
      public Produtos(){

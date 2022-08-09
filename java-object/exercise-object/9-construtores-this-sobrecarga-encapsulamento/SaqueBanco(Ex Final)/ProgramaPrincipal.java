@@ -1,32 +1,27 @@
 import java.util.Scanner;
 
-import javax.sql.rowset.CachedRowSet;
-
 public class ProgramaPrincipal{
     public static void main(String[] args) {
-        Dados dados = new Dados();
-
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Cadastro de Conta Bancaria");
+        System.out.println("\n--- Cadastro de Conta Bancaria ---");
         System.out.print("Número da conta: ");
         int numConta = scanner.nextInt();
-       
         System.out.print("Nome do títular: ");
         String nome = scanner.next(); 
-        dados.setNome(nome);
-        System.out.print("Deposito inicial? (s/n)");
-        String optionDeposito = scanner.next();
+        System.out.print("Deposito inicial (s/n)? ");
+        char resposta = scanner.next().charAt(0);
 
-        float saldoEmConta;
-        if (optionDeposito == "s"){
+        double movimentacao;
+        if (resposta == 's'){
             System.out.print("Informe o valor do primeiro depósito: ");
-            saldoEmConta = scanner.nextFloat();
-            dados.setSaldoEmConta(saldoEmConta);
+            movimentacao = scanner.nextDouble();
         } else {
-            saldoEmConta = 0;
+            movimentacao = 0;
         }
-
-        System.out.println("*** Informe o número da opção desejada ***");
+        
+        Dados atualizaDados = new Dados(numConta, nome, movimentacao);
+        System.out.println(atualizaDados);
+        System.out.println("\n*** Informe o número da opção desejada ***");
         System.out.println("0 - Sair\n1 - Deposito \n2 - Saque");
         System.out.print("\nOpção: ");
         int option = scanner.nextInt();
@@ -35,23 +30,21 @@ public class ProgramaPrincipal{
             switch (option){
                 case 1:
                 System.out.print("Valor que deseja depositar: ");
-                saldoEmConta += scanner.nextFloat();
-                dados.setSaldoEmConta(saldoEmConta);
-                System.out.println("Número da conta: " + numConta + dados);
+                movimentacao = scanner.nextDouble();
+                atualizaDados.deposito(movimentacao);
+                System.out.println(atualizaDados);
                 break;
-
                 case 2:
                 System.out.print("Valor que deseja sacar: ");
-                saldoEmConta = (saldoEmConta - 5) - scanner.nextFloat();
-                dados.setSaldoEmConta(saldoEmConta);
-                System.out.println("Número da conta: " + numConta + dados);
+                movimentacao = scanner.nextDouble();
+                atualizaDados.saque(movimentacao);
+                System.out.println(atualizaDados);
                 break;
             }
-            System.out.println("*** Informe o número da opção desejada ***");
+            System.out.println("\n*** Informe o número da opção desejada ***");
             System.out.print("0 - Sair\n1 - Deposito \n2 - Saque");
             System.out.print("\nOpção: ");
             option = scanner.nextInt();
-
         }
     }
 }

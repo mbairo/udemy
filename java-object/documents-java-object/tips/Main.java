@@ -72,7 +72,13 @@ public class Main {
         // int code = 5290;
         // char gender = 'f';
 
-        // double price1 = 2100.0;
+        // double price1 = 2100.0;        java-objetos/documents-java-objeto/git-github/
+        java-objetos/documents-java-objeto/jpg/
+        java-objetos/documents-java-objeto/obj/05-memoria-arrays-e-listas.pdf
+        java-objetos/documents-java-objeto/obj/11-data-hora/
+        java-objetos/exercise-basic/
+        java-objetos/exercise-obj/
+
         // double price2 = 650.50;
         // double measure = 53.234567;
 
