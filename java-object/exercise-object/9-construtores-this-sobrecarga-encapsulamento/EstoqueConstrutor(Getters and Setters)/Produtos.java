@@ -38,8 +38,6 @@ public class Produtos{
          return quantidade;
      }
 
-
-
      public double valorTotalNoEstoque(){
          return preco * quantidade;
      }

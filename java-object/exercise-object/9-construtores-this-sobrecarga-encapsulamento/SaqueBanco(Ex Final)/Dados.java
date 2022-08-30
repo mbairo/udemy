@@ -33,7 +33,6 @@ public class Dados {
         return saldoEmConta;
     }
 
-
     public void deposito(double movimentacao) {
         saldoEmConta += movimentacao;
     }
@@ -46,7 +45,3 @@ public class Dados {
         return "\n*** Dados Atualizados ***\nConta: " + numConta + "\nNome: "+ nome +"\nSaldo em Conta: " +  String.format("%.2f",saldoEmConta) + "\n";
     }
 }
-
-
-
-
